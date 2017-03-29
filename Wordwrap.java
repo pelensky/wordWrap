@@ -5,7 +5,7 @@ public class Wordwrap {
     } else {
       int space = phrase.indexOf(" ");
       if (space >= 0) {
-        return "Dan\nPelensky";
+        return phrase.substring(0, space) + "\n" + splitLines(phrase.substring(space+1), number);
       } else {
     return phrase.substring(0, number) + "\n" + splitLines(phrase.substring(number), number);
     }

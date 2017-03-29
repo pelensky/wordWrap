@@ -10,4 +10,10 @@ String result = wordwrap.splitLines("Dan",15);
 assertEquals("Dan", result);
 }
 
+@Test
+public void BreaksLongWordDownOverMultipleLines() {
+Wordwrap wordwrap = new Wordwrap();
+String result = wordwrap.splitLines("DanDan", 3);
+assertEquals("Dan\nDan", result);
+}
 }

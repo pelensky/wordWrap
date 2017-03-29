@@ -3,7 +3,7 @@ public class Wordwrap {
     if (phrase.length() <= number) {
     return phrase;
     } else {
-      int space = phrase.indexOf(" ");
+      int space = phrase.substring(0, number+1).lastIndexOf(" ");
       if (space >= 0) {
         return phrase.substring(0, space) + "\n" + splitLines(phrase.substring(space+1), number);
       } else {

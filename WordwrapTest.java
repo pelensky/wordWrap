@@ -44,4 +44,11 @@ Wordwrap wordwrap = new Wordwrap();
 String result = wordwrap.splitLines("Dan Is Cool", 4);
 assertEquals("Dan\nIs\nCool", result);
 }
+
+@Test
+public void BreakAtLastSpace(){
+Wordwrap wordwrap = new Wordwrap();
+String result = wordwrap.splitLines("Dan Dan Dan", 9);
+assertEquals("Dan Dan\nDan", result);
+}
 }

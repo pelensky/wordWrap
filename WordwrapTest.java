@@ -9,4 +9,5 @@ Wordwrap wordwrap = new Wordwrap();
 String result = wordwrap.splitLines("Dan",15);
 assertEquals("Dan", result);
 }
+
 }

@@ -23,4 +23,11 @@ Wordwrap wordwrap = new Wordwrap();
 String result = wordwrap.splitLines("DanPelensky",6);
 assertEquals("DanPel\nensky", result);
 }
+
+@Test
+public void BreaksLinesToThreeLines(){
+Wordwrap wordwrap = new Wordwrap();
+String result = wordwrap.splitLines("DanIsCool", 3);
+assertEquals("Dan\nIsC\nool", result);
+}
 }

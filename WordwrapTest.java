@@ -30,4 +30,11 @@ Wordwrap wordwrap = new Wordwrap();
 String result = wordwrap.splitLines("DanIsCool", 3);
 assertEquals("Dan\nIsC\nool", result);
 }
+
+@Test
+public void BreaksAtSpace(){
+Wordwrap wordwrap = new Wordwrap();
+String result = wordwrap.splitLines("Dan Pelensky", 10);
+assertEquals("Dan\nPelensky", result);
+}
 }

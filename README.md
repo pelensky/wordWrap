@@ -4,7 +4,7 @@ You write a class called Wrapper, that has a single static function named wrap t
 Like a word processor, break the line by replacing the last space in a line with a newline.
 ```
 
-Compile Wordrap file `javac Hangman.java`
+Compile Wordrap file `javac Wordwrap.java`
 
 Compile Test File `javac -cp .:junit-4.12.jar WordwrapTest.java`
 

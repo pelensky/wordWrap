@@ -1,6 +1,6 @@
 public class Wordwrap {
   public String splitLines(String phrase, int number){
-    return phrase;
+    return phrase.replaceAll(" ", "\n");
   }
 }
 

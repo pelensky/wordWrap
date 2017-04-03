@@ -23,4 +23,9 @@ public class WordwrapTest {
     public void returnWordOnTwoLinesIfNoSpace(){
       assertEquals("Word\nWrap", wordwrap.splitLines("WordWrap", 4));
     }
+
+  @Test
+    public void splitsWordsOntoThreeLines(){
+      assertEquals("Word\nWord\nWord", wordwrap.splitLines("WordWordWord", 4));
+    }
 }

@@ -18,4 +18,9 @@ public class WordwrapTest {
     public void returnWordWhenShorterThanLength(){
       assertEquals("Dan", wordwrap.splitLines("Dan", 10));
     }
+
+  @Test
+    public void returnWordOnTwoLinesIfNoSpace(){
+      assertEquals("Word\nWrap", wordwrap.splitLines("WordWrap", 4));
+    }
 }

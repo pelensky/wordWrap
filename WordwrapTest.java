@@ -10,7 +10,12 @@ public class WordwrapTest {
     }
 
   @Test
-    public void noWord(){
+    public void returnEmptyStringWhenNoWord(){
       assertEquals("", wordwrap.splitLines("",10));
+    }
+
+  @Test
+    public void returnWordWhenShorterThanLength(){
+      assertEquals("Dan", wordwrap.splitLines("Dan", 10));
     }
 }

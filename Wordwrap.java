@@ -1,14 +1,14 @@
-public class Wordwrap {
-  public String splitLines(String phrase, int length){
-    if (phrase.length() <= length) {
+public class Wordwrap{
+  public String splitLines(String phrase, int number){
+    if (phrase.length() <= number){
       return phrase;
     } else {
-        int space = phrase.substring(0, length+1).lastIndexOf(" ");
-        if (space >= 0) {
-          return phrase.substring(0, space) + "\n" + splitLines(phrase.substring(space+1), length);
-        } else {
-      return phrase.substring(0, length) + "\n" + splitLines(phrase.substring(length), length);
-        }
+      int space = phrase.substring(0, number).lastIndexOf(" ");
+      if (space >= 0) {
+        return phrase.substring(0, space) + "\n" + splitLines(phrase.substring(space+1), number);
+      } else {
+        return phrase.substring(0, number) + "\n" + splitLines(phrase.substring(number), number);
+      }
     }
   }
 }

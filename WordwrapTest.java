@@ -10,37 +10,52 @@ public class WordwrapTest {
     }
 
   @Test
-    public void returnEmptyStringWhenNoWord(){
-      assertEquals("", wordwrap.splitLines("",10));
+    public void returnEmptyStringWhenGivenEmptyString(){
+      assertEquals("", wordwrap.splitLines("", 10));
     }
 
   @Test
-    public void returnWordWhenShorterThanLength(){
-      assertEquals("Dan", wordwrap.splitLines("Dan", 10));
+    public void returnWordWhenWordIsSmallerThanNumber(){
+      assertEquals("Word", wordwrap.splitLines("Word", 10));
     }
 
   @Test
-    public void returnWordOnTwoLinesIfNoSpace(){
-      assertEquals("Word\nWrap", wordwrap.splitLines("WordWrap", 4));
+  public void returnsWordSplitWhenItIsLongerThanNumber(){
+    assertEquals("Word\nWord", wordwrap.splitLines("WordWord", 4));
+  }
+
+  @Test
+    public void returnsWordSplitWhenLongerThanNumberOtherExample(){
+      assertEquals("WordWo\nrd", wordwrap.splitLines("WordWord", 6));
     }
 
   @Test
-    public void splitsWordsOntoThreeLines(){
+    public void returnsWordsOverThreeLines(){
       assertEquals("Word\nWord\nWord", wordwrap.splitLines("WordWordWord", 4));
     }
 
   @Test
-    public void breaksWordsAtSpaces(){
+    public void returnsWordSplitAtSpace(){
       assertEquals("Word\nWord", wordwrap.splitLines("Word Word", 6));
     }
 
   @Test
-    public void breaksOverMultipleLinesAtSpaces(){
+    public void returnsWordSplitAtSpaceOtherExample(){
+      assertEquals("Hello\nHello", wordwrap.splitLines("Hello Hello", 6));
+    }
+
+  @Test
+    public void returnsWordSplitOverThreeLines(){
       assertEquals("Word\nWord\nWord", wordwrap.splitLines("Word Word Word", 6));
     }
 
   @Test
-    public void breaksAtLastSpaceInLine(){
-      assertEquals("Word Word\nWord", wordwrap.splitLines("Word Word Word", 9));
+    public void returnsWordSplitAtSecondSpaceIfAppropriate(){
+      assertEquals("Word Word\nWord", wordwrap.splitLines("Word Word Word", 10));
+    }
+
+  @Test
+    public void returnsMultipleWordsSplitAtSecondSpace(){
+      assertEquals("Word Word\nWord Word\nWord", wordwrap.splitLines("Word Word Word Word Word", 11));
     }
 }

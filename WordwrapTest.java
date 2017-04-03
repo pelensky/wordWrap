@@ -28,4 +28,19 @@ public class WordwrapTest {
     public void splitsWordsOntoThreeLines(){
       assertEquals("Word\nWord\nWord", wordwrap.splitLines("WordWordWord", 4));
     }
+
+  @Test
+    public void breaksWordsAtSpaces(){
+      assertEquals("Word\nWord", wordwrap.splitLines("Word Word", 6));
+    }
+
+  @Test
+    public void breaksOverMultipleLinesAtSpaces(){
+      assertEquals("Word\nWord\nWord", wordwrap.splitLines("Word Word Word", 6));
+    }
+
+  @Test
+    public void breaksAtLastSpaceInLine(){
+      assertEquals("Word Word\nWord", wordwrap.splitLines("Word Word Word", 9));
+    }
 }
